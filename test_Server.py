@@ -58,10 +58,8 @@ def test_update(client):
         "id": 1,
         "username": "Dzenan",
         "email": "dsuljic@gmail.com",
-        "password": "password123"
+        "password": "password"
     })
 
     answ = client.get("/")
-
-    print(answ.json)
-    assert answ.json==[{"id": 1, "username": "Dzenan", "email": "dsuljic@gmail.com", "password": "password"}]
+    assert answ.json == [{"id": 1, "username": "Dzenan", "email": "dsuljic@gmail.com", "password": "password"}]

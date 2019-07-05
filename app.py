@@ -2,7 +2,7 @@ from flask import Flask, request, Response
 from flask_restful import Resource, Api, reqparse
 from flask_sqlalchemy import SQLAlchemy
 from functools import wraps
-
+from flask_cors import CORS
 
 
 # Flaskapp wird erstellt
@@ -13,6 +13,7 @@ api = Api(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////mydb.db'
 # Datenbank wird erstellt
 db = SQLAlchemy(app)
+CORS(app)
 
 # Konstrukt der Resource
 class User(db.Model):
@@ -24,13 +25,16 @@ class User(db.Model):
 class Message(db.Model):
     messageID = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(255), unique=False,nullable=False)
-    owner = db.Column(db.String(10), unique=False, nullable=False)
+    owner = db.Column(db.Integer, unique=False, nullable=False)
 
 #Datenbank wird erstellt
 db.create_all()
 
 #db.session.add(User(username="Admin", email="admin@admin.com", password="password"))
 #db.session.commit()
+
+db.session.add(Message(text="Hallo Welt", owner=1))
+db.session.commit()
 
 
 def check_auth(username, password):
@@ -91,7 +95,7 @@ class UseResource(Resource):
     #@requires_auth
     def delete(self):
         parser = reqparse.RequestParser()
-        # Die ID muss vorhanden sein
+        # Die ID muss vorhanden sein /Siehe Insomnia JS
         parser.add_argument('id', type=int)
         # Übersetzt HTTP-Argumente in Python-Variable
         id = parser.parse_args().id
@@ -107,17 +111,20 @@ class UseResource(Resource):
         parser = reqparse.RequestParser()
         # ID muss vorhanden sein bei dem Request
         parser.add_argument('id', type=int)
+        parser.add_argument('username', type=str)
+        parser.add_argument('email', type=str)
+        parser.add_argument('password', type=str)
         # Übersetzt HTTP-Argumente in Python-Variable
         id = parser.parse_args().id
 
         # Der User, welcher geändert werden soll wird durch die id definiert
         user = User.query.get(id)
         # username soll geändert werden
-        username=request.json['username']
+        username=parser.parse_args().username
         # email soll geändert werden
-        email = request.json['email']
+        email = parser.parse_args().email
         # password soll geändert werden
-        password = request.json['password']
+        password = parser.parse_args().password
 
         # derzeitiger username und derzeitige email wird ersetzt
         user.username=username
@@ -127,13 +134,18 @@ class UseResource(Resource):
         db.session.commit()
         return 'successfully updated', 200
 
+
+
+# ========================================
+# ================Messages================
+# ========================================
 class UseResourceMessage(Resource):
     def post(self):
         # Übersetzer: von Request zu Python übersetzt
         parser = reqparse.RequestParser()
         # Die Argumente username und email müssen vorhanden sein
         parser.add_argument('text', type=str)
-        parser.add_argument('owner', type=str)
+        parser.add_argument('owner', type=int)
         # Fügt das Objekt in die Datenbank hinzu
         db.session.add(Message(text=parser.parse_args().text,owner=parser.parse_args().owner))
         db.session.commit()
@@ -174,15 +186,17 @@ class UseResourceMessage(Resource):
         parser = reqparse.RequestParser()
         # ID muss vorhanden sein bei dem Request
         parser.add_argument('messageID', type=int)
+        parser.add_argument('text', type=str)
+        parser.add_argument('owner', type=str)
         # Übersetzt HTTP-Argumente in Python-Variable
         messageID = parser.parse_args().messageID
 
         # Der User, welcher geändert werden soll wird durch die id definiert
         message = Message.query.get(messageID)
         # username soll geändert werden
-        text=request.json['text']
+        text=parser.add_argument().text
         # email soll geändert werden
-        owner = request.json['owner']
+        owner = parser.add_argument().owner
 
 
         # derzeitiger username und derzeitige email wird ersetzt
