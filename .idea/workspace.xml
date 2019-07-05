@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be40a8f3-3af0-4571-99b3-5b6a6bc01ae9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_Server.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,24 +37,27 @@
         <counts>
           <entry key="project.closed" value="7" />
           <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.18" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="5762" />
+          <entry key="py" value="5823" />
+          <entry key="txt" value="4" />
           <entry key="vue" value="1182" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="5762" />
+          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="Python" value="5823" />
           <entry key="Vue.js" value="1182" />
         </counts>
       </usages-collector>
@@ -84,12 +84,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="140" column="64" lean-forward="true" selection-start-line="140" selection-start-column="64" selection-end-line="140" selection-end-column="64" />
+            <state relative-caret-position="264">
+              <caret line="198" column="43" lean-forward="true" selection-start-line="198" selection-start-column="43" selection-end-line="198" selection-end-column="43" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
-                <marker date="1562258552454" expanded="true" signature="766:954" ph="..." />
-                <marker date="1562258552454" expanded="true" signature="4901:7370" ph="..." />
+                <marker date="1562317556420" expanded="true" signature="766:954" ph="..." />
+                <marker date="1562317556420" expanded="true" signature="5032:7501" ph="..." />
               </folding>
             </state>
           </provider>
@@ -98,8 +98,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myclient/src/components/HelloWorld.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1097">
-              <caret line="84" column="24" lean-forward="true" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
+            <state relative-caret-position="1428">
+              <caret line="84" column="24" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -118,7 +118,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myclient/src/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="102">
               <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
@@ -130,7 +130,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_Server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
+            <state relative-caret-position="935">
               <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -162,8 +162,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/test_Server.py" />
-        <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/myclient/src/components/HelloWorld.vue" />
+        <option value="$PROJECT_DIR$/app.py" />
       </list>
     </option>
   </component>
@@ -179,6 +179,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/myclient/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/axios/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/follow-redirects/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-buffer/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ms/package.json" />
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -192,7 +197,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -200,28 +204,11 @@
               <item name="myServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="myServer" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="myServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myServer" type="462c0819:PsiDirectoryNode" />
-              <item name="myclient" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myServer" type="462c0819:PsiDirectoryNode" />
-              <item name="myclient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myServer" type="462c0819:PsiDirectoryNode" />
-              <item name="myclient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -351,6 +338,14 @@
       <option name="presentableId" value="Default" />
       <updated>1561883422174</updated>
     </task>
+    <task id="LOCAL-00001" summary="test">
+      <created>1562317679152</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1562317679152</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -387,9 +382,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23825504" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24161074" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -418,6 +412,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://C:/Python37/Lib/site-packages/flask_sqlalchemy/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -428,6 +426,25 @@
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fbafe72f-398b-45fb-8ec6-7385a2030ab3/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="198" column="43" lean-forward="true" selection-start-line="198" selection-start-column="43" selection-end-line="198" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+            <marker date="1562317556420" expanded="true" signature="766:954" ph="..." />
+            <marker date="1562317556420" expanded="true" signature="5032:7501" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myclient/src/components/HelloWorld.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1428">
+          <caret line="84" column="24" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/myclient/src/router.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -440,7 +457,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myclient/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="102">
           <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
@@ -450,30 +467,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test_Server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
+        <state relative-caret-position="935">
           <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
             <marker date="1562252372982" expanded="true" signature="1312:1317" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myclient/src/components/HelloWorld.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1097">
-          <caret line="84" column="24" lean-forward="true" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="140" column="64" lean-forward="true" selection-start-line="140" selection-start-column="64" selection-end-line="140" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-            <marker date="1562258552454" expanded="true" signature="766:954" ph="..." />
-            <marker date="1562258552454" expanded="true" signature="4901:7370" ph="..." />
           </folding>
         </state>
       </provider>
