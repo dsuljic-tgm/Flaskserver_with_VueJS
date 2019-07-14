@@ -1,22 +1,63 @@
 <template>
   <div class="hello">
-    <div v-for="user in users">
-      {{user.id}} <br>
-     {{user.username}}  <br>
-     {{user.email}} <br>
-      {{user.password}}
+
+      <div>
+      <!-- users table -->
+        <b-table striped hover>
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Username</th>
+              <th scope="col">Email</th>
+              <th scope="col">Password</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(user, index) in users" :key="index">
+              <td width="25%">{{ user.id }}</td>
+              <td width="25%">{{ user.username }}</td>
+              <td width="25%">{{ user.email }}</td>
+              <td width="25%">{{ user.password }}</td>
+            </tr>
+          </tbody>
+        </b-table>
+        </div>
+
+      <br />
+      <br />
+    <div>
+    <b-table striped hover>
+        <thead>
+        <tr>
+            <th scope="col">MessageID</th>
+            <th scope="col">Text</th>
+            <th scope="col">Owner</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="(message,index) in messages" :key="index">
+            <td width="17%">{{message.messageID}}</td>
+            <td width="50%">{{message.text}}</td>
+            <td width="20%">{{message.owner}}</td>
+            <td><button v-on:click="onDeleteMessage(message)">Löschen</button></td>
+        </tr>
+        </tbody>
+    </b-table>
     </div>
 
-    <div v-for="message in messages">
-      {{message.messageID}} <br>
-     {{message.text}}  <br>
-     {{message.owner}}
-    </div>
+      <br />
+      <div>
+        <textarea type="text" v-model="text" placeholder="add multiple lines"></textarea>
 
-    <input type="text" v-model="text"/>
-    <input type="number" v-model="owner"/>
-    <button v-on:click="postMessageData">Posten</button>
-    {{text}}
+          <br />
+
+        <input type="number" v-model="owner"/>
+
+          <br />
+
+        <button v-on:click="postMessageData">Posten</button>
+      </div>
   </div>
 </template>
 
@@ -55,6 +96,22 @@ export default {
                   })
         },
 
+         removeMessage(msgID) {
+          axios.delete(`http://localhost:5000/chat/${msgID}`)
+            .then(() => {
+              this.getMessageData()
+              this.message = 'Message removed!'
+              this.showMessage = true
+            })
+            .catch((error) => {
+              // eslint-disable-next-line
+              console.error(error);
+              this.getMessageData()
+            })
+        },
+        onDeleteMessage (message) {
+              this.removeMessage(message.messageID)
+            },
           postMessageData(){
           axios.post('http://localhost:5000/chat',{
               text:this.text,
