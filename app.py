@@ -10,7 +10,7 @@ app = Flask(__name__)
 # Flaskrestful: Application wird erstellt
 api = Api(app)
 # persistente Datenbank.
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////mydb.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydb.db'
 # Datenbank wird erstellt
 db = SQLAlchemy(app)
 CORS(app)
@@ -139,7 +139,7 @@ class UseResource(Resource):
 # ========================================
 # ================Messages================
 # ========================================
-class UseResourceMessage(Resource):
+class UseResourceMessages(Resource):
     def post(self):
         # Übersetzer: von Request zu Python übersetzt
         parser = reqparse.RequestParser()
@@ -167,29 +167,25 @@ class UseResourceMessage(Resource):
             })
         return rto
 
-    #@requires_auth
-    def delete(self):
-        parser = reqparse.RequestParser()
-        # Die ID muss vorhanden sein
-        parser.add_argument('messageID', type=int)
-        # Übersetzt HTTP-Argumente in Python-Variable
-        messageID = parser.parse_args().messageID
+class UseResourceMessage(Resource):
 
+    #@requires_auth
+    # Hier wird die messageID über die URL mitgegeben
+    def delete(self, messageID):
         message = Message.query.get(messageID)
         db.session.delete(message)
         db.session.commit()
         return 'successfully deleted', 200
 
     #@requires_auth
-    def put(self):
+    # Hier wird die messageID über die URL mitgegeben
+    def put(self, messageID):
         # Übersetzer: von Request zu Python übersetzt
         parser = reqparse.RequestParser()
         # ID muss vorhanden sein bei dem Request
-        parser.add_argument('messageID', type=int)
         parser.add_argument('text', type=str)
         parser.add_argument('owner', type=str)
         # Übersetzt HTTP-Argumente in Python-Variable
-        messageID = parser.parse_args().messageID
 
         # Der User, welcher geändert werden soll wird durch die id definiert
         message = Message.query.get(messageID)
@@ -209,7 +205,8 @@ class UseResourceMessage(Resource):
 
 # Hier wird der Pfad erstellt, wo diese Resource zur Verfügung gestellt wird.
 api.add_resource(UseResource, '/')
-api.add_resource(UseResourceMessage, '/chat')
+api.add_resource(UseResourceMessages, '/chat')
+api.add_resource(UseResourceMessage, '/chat/<string:messageID>') #messageID als Teil der URL
 
 # Wenn main-Thread ausgeführt wird die Flask-App mit Werkzeug ausgeführt. Werkzeug ist nicht für ein öffentliches Deployment empfohlen.
 if __name__ == '__main__':

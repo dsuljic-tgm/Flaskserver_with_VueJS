@@ -3,7 +3,7 @@
 
       <div>
       <!-- users table -->
-        <b-table striped hover>
+        <table striped hover>
           <thead>
             <tr>
               <th scope="col">ID</th>
@@ -20,13 +20,13 @@
               <td width="25%">{{ user.password }}</td>
             </tr>
           </tbody>
-        </b-table>
+        </table>
         </div>
 
       <br />
       <br />
     <div>
-    <b-table striped hover>
+    <table striped hover>
         <thead>
         <tr>
             <th scope="col">MessageID</th>
@@ -43,7 +43,7 @@
             <td><button v-on:click="onDeleteMessage(message)">Löschen</button></td>
         </tr>
         </tbody>
-    </b-table>
+    </table>
     </div>
 
       <br />
