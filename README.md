@@ -1,1 +1,1 @@
-# Minichat
+# Forum
