@@ -33,8 +33,8 @@ db.create_all()
 #db.session.add(User(username="Admin", email="admin@admin.com", password="password"))
 #db.session.commit()
 
-db.session.add(Message(text="Hallo Welt", owner=1))
-db.session.commit()
+#db.session.add(Message(text="Hallo Welt", owner=1))
+#db.session.commit()
 
 
 def check_auth(username, password):
@@ -56,9 +56,13 @@ def requires_auth(f):
         return f(*args, **kwargs)
     return decorated
 
+
+# ========================================
+# ================USERS---================
+# ========================================
 # Resource, weil Flaskrestful ein Objekt auf eine Route binden muss. Dieses Objekt
 # beinhlatet die HTTP-Methoden, die auf dieser Resource verwendet werden können und diese in dieser Klasse implementiert.
-class UseResource(Resource):
+class UseResourceUsers(Resource):
 
     # Die Methoden MÜSSEN GET POST DELETE UND PUT heißen !!!
     # POST = ADD
@@ -134,12 +138,37 @@ class UseResource(Resource):
         db.session.commit()
         return 'successfully updated', 200
 
+# ========================================
+# ================USERS---================
+# ========================================
+class UseResourceUsersUI(Resource):
+    # @requires_auth
+    def get(self, id):
+        user = User.query.get(id)
+        rto = []
+
+        rto.append({
+            'id': user.id,
+            'username': user.username,
+            'email': user.email,
+            'password': user.password
+        })
+
+        return rto
+
+    # @requires_auth
+    def delete(self, id):
+        user = User.query.get(id)
+        db.session.delete(user)
+        db.session.commit()
+        return 200
+
 
 
 # ========================================
 # ================Messages================
 # ========================================
-class UseResourceMessage(Resource):
+class UseResourceMessages(Resource):
     def post(self):
         # Übersetzer: von Request zu Python übersetzt
         parser = reqparse.RequestParser()
@@ -170,15 +199,12 @@ class UseResourceMessage(Resource):
     #@requires_auth
     def delete(self):
         parser = reqparse.RequestParser()
-        # Die ID muss vorhanden sein
-        parser.add_argument('messageID', type=int)
-        # Übersetzt HTTP-Argumente in Python-Variable
-        messageID = parser.parse_args().messageID
-
-        message = Message.query.get(messageID)
+        parser.add_argument("messageID", type=int)
+        id = parser.parse_args().messageID
+        message = Message.query.get(id)
         db.session.delete(message)
         db.session.commit()
-        return 'successfully deleted', 200
+        return "successfully deleted", 200
 
     #@requires_auth
     def put(self):
@@ -187,29 +213,57 @@ class UseResourceMessage(Resource):
         # ID muss vorhanden sein bei dem Request
         parser.add_argument('messageID', type=int)
         parser.add_argument('text', type=str)
-        parser.add_argument('owner', type=str)
+        parser.add_argument('owner', type=int)
         # Übersetzt HTTP-Argumente in Python-Variable
-        messageID = parser.parse_args().messageID
+        id = parser.parse_args().messageID
 
         # Der User, welcher geändert werden soll wird durch die id definiert
-        message = Message.query.get(messageID)
+        message = Message.query.get(id)
         # username soll geändert werden
-        text=parser.add_argument().text
+        text = parser.parse_args().text
         # email soll geändert werden
-        owner = parser.add_argument().owner
-
+        owner = parser.parse_args().owner
 
         # derzeitiger username und derzeitige email wird ersetzt
-        message.text=text
-        message.owner=owner
+        message.text = text
+        message.owner = owner
 
         db.session.commit()
         return 'successfully updated', 200
 
+# ========================================
+# ================Message================
+# ========================================
+class UseResourceMessagesUI(Resource):
+
+    #@requires_auth
+    def get(self, messageID):
+        message = Message.query.get(messageID)
+        rto=[]
+
+        rto.append({
+            'messageID': message.messageID,
+            'text': message.text,
+            'owner': message.owner
+        })
+
+        return rto
+
+    #@requires_auth
+    def delete(self, messageID):
+        message = Message.query.get(messageID)
+        db.session.delete(message)
+        db.session.commit()
+        return 200
+
+
+
 
 # Hier wird der Pfad erstellt, wo diese Resource zur Verfügung gestellt wird.
-api.add_resource(UseResource, '/')
-api.add_resource(UseResourceMessage, '/chat')
+api.add_resource(UseResourceUsers, '/')
+api.add_resource(UseResourceUsersUI, '/<id>')
+api.add_resource(UseResourceMessages, '/chat')
+api.add_resource(UseResourceMessagesUI, '/chat/<messageID>')
 
 # Wenn main-Thread ausgeführt wird die Flask-App mit Werkzeug ausgeführt. Werkzeug ist nicht für ein öffentliches Deployment empfohlen.
 if __name__ == '__main__':

@@ -48,15 +48,26 @@
 
       <br />
       <div>
-        <textarea type="text" v-model="text" placeholder="add multiple lines"></textarea>
-
+              <h2>Forumpost erstellen</h2>
+              <h3>Message</h3>
+              <textarea type="text" v-model="text" placeholder="add multiple lines"></textarea>
+              <h3>Username</h3>
+              <input type="number" v-model="owner"/>
+              <br />
+              <br />
+              <button v-on:click="postMessageData">Posten</button>
           <br />
-
-        <input type="number" v-model="owner"/>
-
           <br />
-
-        <button v-on:click="postMessageData">Posten</button>
+              <h2>Benutzer erstellen</h2>
+              <h3>Username</h3>
+              <textarea type="text" v-model="text" placeholder="add multiple lines"></textarea>
+              <h3>E-Mail</h3>
+              <textarea type="text" v-model="text" placeholder="add multiple lines"></textarea>
+              <h3>Passwort</h3>
+              <input type="password" v-model="owner"/>
+              <br />
+              <br />
+              <button v-on:click="postMessageData">Benutzer hinzufügen</button>
       </div>
   </div>
 </template>
@@ -77,7 +88,7 @@ export default {
       }
     },
     methods:{
-      getData(){
+      getUserData(){
           axios.get('http://localhost:5000/')
           .then((response)=>{
             this.users=response.data
@@ -123,7 +134,7 @@ export default {
           }
     },
   created(){
-      this.getData()
+      this.getUserData()
       this.getMessageData()
   }
 }

@@ -27,7 +27,7 @@ def test_post(client):
     
     assert answ.status_code == 200
 
-    answ2= client.get("/")
+    answ2 = client.get("/")
     assert answ2.json == [{"id": 1, "username":"Richard", "email":"rwutscher@gmail.com", "password":"password"}]
 
 def test_delete(client):
