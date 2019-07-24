@@ -1,19 +1,27 @@
-from flask import Flask, request, Response
+from flask import Flask
 from flask_restful import Resource, Api, reqparse
 from flask_sqlalchemy import SQLAlchemy
-from functools import wraps
 from flask_cors import CORS
+from flask_httpauth import HTTPBasicAuth
 
 
 # Flaskapp wird erstellt
 app = Flask(__name__)
+# Authentication
+auth = HTTPBasicAuth()
 # Flaskrestful: Application wird erstellt
 api = Api(app)
 # persistente Datenbank.
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////mydb.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydb.db'
 # Datenbank wird erstellt
 db = SQLAlchemy(app)
 CORS(app)
+
+@auth.verify_password
+def verify_password(username, password):
+    # Holt den Username wieder mit Username und checked ob das passwort richtig ist.
+    return User.query.filter_by(username=username).first().password == password
+    #return True
 
 # Konstrukt der Resource
 class User(db.Model):
@@ -36,26 +44,28 @@ db.create_all()
 #db.session.add(Message(text="Hallo Welt", owner=1))
 #db.session.commit()
 
+class Login(Resource):
 
-def check_auth(username, password):
-    return username == 'admin' and password == 'admin'
+    def get(self):
+        # Verifizieren von Username und Passwort in Frontend
+        parser = reqparse.RequestParser()
+        parser.add_argument('username', type=str)
+        parser.add_argument('password', type=str)
 
-def authenticate():
-    """Sends a 401 response that enables basic auth"""
-    return Response(
-    'Could not verify your access level for that URL.\n'
-    'You have to login with proper credentials', 401,
-    {'WWW-Authenticate': 'Basic realm="Login Required"'})
+        # Gibt den User zurück. Holt in mit dem Username, statt mit der ID
+        user = User.query.filter_by(username = parser.parse_args().username).first()
 
-def requires_auth(f):
-    @wraps(f)
-    def decorated(*args, **kwargs):
-        auth = request.authorization
-        if not auth or not check_auth(auth.username, auth.password):
-            return authenticate()
-        return f(*args, **kwargs)
-    return decorated
+        if user == None:
+            return 'Username not found, please try again.', 401
+        #parser.parse_args() = das aktuell eingegebene Passwort
+        elif user.password == parser.parse_args().password:
+            # returned die UserID des Users
+            return user.id
+        else:
+            return 'Wrong password, please try again', 402
 
+        # iterriert durch alle Userobjekte, weil User.query.all() nicht JSON-Serializable ist.
+        # Flask braucht etwas in Json, bzw. etwas was in Json umgewandelt werden kann
 
 # ========================================
 # ================USERS---================
@@ -66,7 +76,7 @@ class UseResourceUsers(Resource):
 
     # Die Methoden MÜSSEN GET POST DELETE UND PUT heißen !!!
     # POST = ADD
-    #@requires_auth
+    #@auth.login_required
     def post(self):
         # Übersetzer: von Request zu Python übersetzt
         parser = reqparse.RequestParser()
@@ -80,7 +90,7 @@ class UseResourceUsers(Resource):
         # Returned etwas
         return 'success', 200
 
-    #@requires_auth
+    @auth.login_required
     def get(self):
         # rto = return Object, json array
         rto = []
@@ -96,7 +106,7 @@ class UseResourceUsers(Resource):
             })
         return rto
 
-    #@requires_auth
+    #@auth.login_required
     def delete(self):
         parser = reqparse.RequestParser()
         # Die ID muss vorhanden sein /Siehe Insomnia JS
@@ -109,7 +119,7 @@ class UseResourceUsers(Resource):
         db.session.commit()
         return 'successfully deleted', 200
 
-    #@requires_auth
+    #@auth.login_required
     def put(self):
         # Übersetzer: von Request zu Python übersetzt
         parser = reqparse.RequestParser()
@@ -142,7 +152,8 @@ class UseResourceUsers(Resource):
 # ================USERS---================
 # ========================================
 class UseResourceUsersUI(Resource):
-    # @requires_auth
+
+    @auth.login_required
     def get(self, id):
         user = User.query.get(id)
         rto = []
@@ -156,12 +167,28 @@ class UseResourceUsersUI(Resource):
 
         return rto
 
-    # @requires_auth
+    # @auth.login_required
     def delete(self, id):
         user = User.query.get(id)
         db.session.delete(user)
         db.session.commit()
         return 200
+
+    def put(self, id):
+        user = User.query.get(id)
+        parser = reqparse.RequestParser()
+        username = parser.parse_args().username
+        email = parser.parse_args().email
+        password = parser.parse_args().password
+
+        user.username = username
+        user.email = email
+        user.password = password
+
+        db.session.commit()
+        return 200
+
+
 
 
 
@@ -169,19 +196,22 @@ class UseResourceUsersUI(Resource):
 # ================Messages================
 # ========================================
 class UseResourceMessages(Resource):
+    @auth.login_required
     def post(self):
         # Übersetzer: von Request zu Python übersetzt
         parser = reqparse.RequestParser()
         # Die Argumente username und email müssen vorhanden sein
         parser.add_argument('text', type=str)
-        parser.add_argument('owner', type=int)
+        #ID des aktuell-eingeloggten Users wird verwendet.
+        id = User.query.filter_by(username=auth.username()).first().id
+        #parser.add_argument('owner', type=int)
         # Fügt das Objekt in die Datenbank hinzu
-        db.session.add(Message(text=parser.parse_args().text,owner=parser.parse_args().owner))
+        db.session.add(Message(text=parser.parse_args().text,owner=id))
         db.session.commit()
         # Returned etwas
         return 'success', 200
 
-    #@requires_auth
+    #@auth.login_required
     def get(self):
         # rto = return Object, json array
         rto = []
@@ -196,7 +226,7 @@ class UseResourceMessages(Resource):
             })
         return rto
 
-    #@requires_auth
+    #@auth.login_required
     def delete(self):
         parser = reqparse.RequestParser()
         parser.add_argument("messageID", type=int)
@@ -206,7 +236,7 @@ class UseResourceMessages(Resource):
         db.session.commit()
         return "successfully deleted", 200
 
-    #@requires_auth
+    #@auth.login_required
     def put(self):
         # Übersetzer: von Request zu Python übersetzt
         parser = reqparse.RequestParser()
@@ -236,7 +266,7 @@ class UseResourceMessages(Resource):
 # ========================================
 class UseResourceMessagesUI(Resource):
 
-    #@requires_auth
+    #@auth.login_required
     def get(self, messageID):
         message = Message.query.get(messageID)
         rto=[]
@@ -249,7 +279,7 @@ class UseResourceMessagesUI(Resource):
 
         return rto
 
-    #@requires_auth
+    #@auth.login_required
     def delete(self, messageID):
         message = Message.query.get(messageID)
         db.session.delete(message)
@@ -260,11 +290,11 @@ class UseResourceMessagesUI(Resource):
 
 
 # Hier wird der Pfad erstellt, wo diese Resource zur Verfügung gestellt wird.
-api.add_resource(UseResourceUsers, '/')
-api.add_resource(UseResourceUsersUI, '/<id>')
+api.add_resource(UseResourceUsers, '/users')
+api.add_resource(UseResourceUsersUI, '/users/<id>')
 api.add_resource(UseResourceMessages, '/chat')
 api.add_resource(UseResourceMessagesUI, '/chat/<messageID>')
-
+api.add_resource(Login, '/login')
 # Wenn main-Thread ausgeführt wird die Flask-App mit Werkzeug ausgeführt. Werkzeug ist nicht für ein öffentliches Deployment empfohlen.
 if __name__ == '__main__':
     app.run(debug=True)
