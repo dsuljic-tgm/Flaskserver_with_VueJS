@@ -18,5 +18,5 @@ matrix:
     - npm ci
     script:
     - python ../app.py &
-    - npm serve &
+    - npm run serve &
     - npm test
