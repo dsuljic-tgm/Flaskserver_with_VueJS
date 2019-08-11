@@ -16,10 +16,10 @@ def client():
 
 def test_ping(client):
     # Methoden können durch test_client() aufgerufen und getestet werden
-    assert client.get('/').status_code == 200
+    assert client.get('/users').status_code == 200
 
 def test_post(client):
-    answ = client.post("/", data={
+    answ = client.post("/users", data={
         "username":"Richard",
         "email":"rwutscher@gmail.com",
         "password":"password"
@@ -27,39 +27,39 @@ def test_post(client):
     
     assert answ.status_code == 200
 
-    answ2 = client.get("/")
+    answ2 = client.get("/users")
     assert answ2.json == [{"id": 1, "username":"Richard", "email":"rwutscher@gmail.com", "password":"password"}]
 
 def test_delete(client):
-    client.post("/", data={
+    client.post("/users", data={
         "username":"Richard",
         "email":"rwutscher@gmail.com",
         "password": "password"
     })
 
-    client.post("/", data={
+    client.post("/users", data={
         "username":"Richard2",
         "email":"rwutscher2@gmail.com",
         "password": "password"
     })
 
-    client.delete("/", data={"id":2})
-    answ = client.get("/")
+    client.delete("/users", data={"id":2})
+    answ = client.get("/users")
     assert answ.json == [{"id": 1, "username": "Richard", "email": "rwutscher@gmail.com","password":"password"}]
 
 def test_update(client):
-    client.post("/", data={
+    client.post("/users", data={
         "username": "Richard",
         "email": "rwutscher@gmail.com",
         "password": "password"
     })
 
-    client.put("/", data={
+    client.put("/users", data={
         "id": 1,
         "username": "Dzenan",
         "email": "dsuljic@gmail.com",
         "password": "password"
     })
 
-    answ = client.get("/")
+    answ = client.get("/users")
     assert answ.json == [{"id": 1, "username": "Dzenan", "email": "dsuljic@gmail.com", "password": "password"}]

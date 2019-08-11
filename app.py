@@ -21,8 +21,8 @@ CORS(app)
 @auth.verify_password
 def verify_password(username, password):
     # Holt den Username wieder mit Username und checked ob das passwort richtig ist.
-    return User.query.filter_by(username=username).first().password == password
-    #return True
+    #return User.query.filter_by(username=username).first().password == password
+    return True
 
 # Konstrukt der Resource
 class User(db.Model):

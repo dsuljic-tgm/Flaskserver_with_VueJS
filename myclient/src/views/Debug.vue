@@ -23,7 +23,7 @@
                     <b-button variant="success" v-on:click="postMessageData">Posten</b-button>
                 </div>
                 <div class="col-sm-6">
-                    <b-table striped hover :items="users" v-bind:fields="userfield">
+                    <b-table striped hover :items="users" v-bind:fields="userfield" id="usertable">
                         <template slot="actions" slot-scope="row">
                             <b-button variant="danger" size="sm" @click="removeUser(row.item.id)" class="mr-2">
                                 Löschen
@@ -43,7 +43,7 @@
                     <b-form-input type="password" v-model="userPassword"/>
                     <br/>
                     <br/>
-                    <b-button variant="success" v-on:click="postUserData">Benutzer hinzufügen</b-button>
+                    <b-button id="newuser" variant="success" v-on:click="postUserData">Benutzer hinzufügen</b-button>
                 </div>
             </div>
 

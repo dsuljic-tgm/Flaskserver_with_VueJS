@@ -4,11 +4,15 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "open": "cypress open",
+    "test": "cypress run"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "bootstrap-vue": "^2.0.0-rc.26",
     "core-js": "^2.6.5",
+    "cypress": "^3.4.1",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3"
   },
