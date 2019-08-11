@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be40a8f3-3af0-4571-99b3-5b6a6bc01ae9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -59,9 +60,9 @@
           <entry key="js" value="577" />
           <entry key="json" value="48" />
           <entry key="py" value="10336" />
-          <entry key="txt" value="150" />
+          <entry key="txt" value="156" />
           <entry key="vue" value="5661" />
-          <entry key="yml" value="23" />
+          <entry key="yml" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -69,10 +70,10 @@
           <entry key="Ini" value="254" />
           <entry key="JSON" value="48" />
           <entry key="JavaScript" value="577" />
-          <entry key="PLAIN_TEXT" value="161" />
+          <entry key="PLAIN_TEXT" value="167" />
           <entry key="Python" value="10336" />
           <entry key="Vue.js" value="5661" />
-          <entry key="YAML" value="23" />
+          <entry key="YAML" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -143,8 +144,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+            <state relative-caret-position="187">
+              <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
               <folding>
                 <element signature="e#21#132#0" />
               </folding>
@@ -435,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565515804135</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Travis">
+      <created>1565517724393</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1565517724393</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -517,7 +525,8 @@
     <MESSAGE value="test" />
     <MESSAGE value="Login hinzugefügt. CREATE, READ, DELETE for User and Messages" />
     <MESSAGE value="Testing, Seperated Models, UI-Testing, Unittests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testing, Seperated Models, UI-Testing, Unittests" />
+    <MESSAGE value="Travis" />
+    <option name="LAST_COMMIT_MESSAGE" value="Travis" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://C:/Python37/Lib/site-packages/flask_sqlalchemy/__init__.py">
@@ -688,8 +697,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        <state relative-caret-position="187">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
           <folding>
             <element signature="e#21#132#0" />
           </folding>
