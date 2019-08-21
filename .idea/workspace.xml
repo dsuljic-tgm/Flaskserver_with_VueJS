@@ -3,7 +3,27 @@
   <component name="ChangeListManager">
     <list default="true" id="be40a8f3-3af0-4571-99b3-5b6a6bc01ae9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing/test_Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/Testing/test_Server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myclient/cypress/integration/examples/actions.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myclient/cypress/integration/examples/aliasing.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myclient/cypress/integration/examples/assertions.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myclient/cypress/integration/examples/connectors.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myclient/cypress/integration/examples/cookies.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myclient/cypress/integration/examples/cypress_api.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myclient/cypress/integration/examples/files.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myclient/cypress/integration/examples/local_storage.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myclient/cypress/integration/examples/location.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myclient/cypress/integration/examples/misc.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myclient/cypress/integration/examples/navigation.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myclient/cypress/integration/examples/network_requests.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myclient/cypress/integration/examples/querying.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myclient/cypress/integration/examples/spies_stubs_clocks.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myclient/cypress/integration/examples/traversal.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myclient/cypress/integration/examples/utilities.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myclient/cypress/integration/examples/viewport.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myclient/cypress/integration/examples/waiting.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myclient/cypress/integration/examples/window.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydb.db" beforeDir="false" afterPath="$PROJECT_DIR$/mydb.db" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,7 +33,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/myServer$myServer.coverage" NAME="myServer Coverage Results" MODIFIED="1565511171904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/myServer$pytest_in_test_Server_py.coverage" NAME="pytest in test_Server.py Coverage Results" MODIFIED="1565511406409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/myServer$pytest_in_test_Server_py.coverage" NAME="pytest in test_Server.py Coverage Results" MODIFIED="1565697682764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/myServer$pytest_for_test_Server_test_post.coverage" NAME="pytest for test_Server.test_post Coverage Results" MODIFIED="1561891380121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/myServer$Tox.coverage" NAME="Tox Coverage Results" MODIFIED="1565513103311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/myServer$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1565513753710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -37,10 +57,10 @@
     <session id="-431388572">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="14" />
+          <entry key="project.closed" value="17" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
-          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.13" value="2" />
@@ -49,7 +69,8 @@
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.18" value="2" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="18" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -59,7 +80,7 @@
           <entry key="ini" value="254" />
           <entry key="js" value="577" />
           <entry key="json" value="48" />
-          <entry key="py" value="10336" />
+          <entry key="py" value="10901" />
           <entry key="txt" value="156" />
           <entry key="vue" value="5661" />
           <entry key="yml" value="27" />
@@ -71,7 +92,7 @@
           <entry key="JSON" value="48" />
           <entry key="JavaScript" value="577" />
           <entry key="PLAIN_TEXT" value="167" />
-          <entry key="Python" value="10336" />
+          <entry key="Python" value="10901" />
           <entry key="Vue.js" value="5661" />
           <entry key="YAML" value="27" />
         </counts>
@@ -80,10 +101,10 @@
         <counts>
           <entry key="gitignore" value="1" />
           <entry key="html" value="1" />
-          <entry key="ini" value="2" />
+          <entry key="ini" value="3" />
           <entry key="js" value="10" />
           <entry key="json" value="2" />
-          <entry key="py" value="13" />
+          <entry key="py" value="18" />
           <entry key="sql" value="1" />
           <entry key="txt" value="1" />
           <entry key="vue" value="11" />
@@ -93,11 +114,11 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="1" />
-          <entry key="Ini" value="2" />
+          <entry key="Ini" value="3" />
           <entry key="JSON" value="2" />
           <entry key="JavaScript" value="10" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="13" />
+          <entry key="Python" value="18" />
           <entry key="Scratch" value="1" />
           <entry key="Vue.js" value="11" />
           <entry key="YAML" value="1" />
@@ -110,8 +131,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="61" column="4" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="4" />
+            <state relative-caret-position="816">
+              <caret line="52" column="19" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
                 <marker date="1565511315341" expanded="true" signature="723:728" ph="..." />
@@ -119,6 +140,24 @@
                 <marker date="1565511315341" expanded="true" signature="1234:1691" ph="..." />
                 <marker date="1565511315341" expanded="true" signature="1544:1691" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/message.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/forumPost.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1275">
+              <caret line="76" selection-start-line="76" selection-end-line="76" />
             </state>
           </provider>
         </entry>
@@ -142,31 +181,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.travis.yml">
+        <entry file="file://$PROJECT_DIR$/tox.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+            <state relative-caret-position="102">
+              <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Testing/test_Server.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1292">
+              <caret line="78" column="12" selection-start-line="78" selection-start-column="12" selection-end-line="78" selection-end-column="12" />
               <folding>
-                <element signature="e#21#132#0" />
+                <element signature="e#0#13#0" expanded="true" />
+                <marker date="1565697682726" expanded="true" signature="2030:2035" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="7" selection-start-column="7" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myclient/src/views/Debug.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="25" column="97" selection-start-line="25" selection-start-column="97" selection-end-line="25" selection-end-column="97" />
             </state>
           </provider>
         </entry>
@@ -227,6 +258,7 @@
         <option value="$PROJECT_DIR$/myclient/cypress/integration/AddUser.spec.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/Testing/test_Server.py" />
       </list>
     </option>
   </component>
@@ -263,6 +295,29 @@
               <item name="myServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="myServer" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="myServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myServer" type="462c0819:PsiDirectoryNode" />
+              <item name="myclient" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myServer" type="462c0819:PsiDirectoryNode" />
+              <item name="myclient" type="462c0819:PsiDirectoryNode" />
+              <item name="cypress" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myServer" type="462c0819:PsiDirectoryNode" />
+              <item name="myclient" type="462c0819:PsiDirectoryNode" />
+              <item name="cypress" type="462c0819:PsiDirectoryNode" />
+              <item name="integration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myServer" type="462c0819:PsiDirectoryNode" />
+              <item name="Testing" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -271,7 +326,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../SEW/simple_user_database/sew5-simple-user-database-dsuljic-tgm" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/miniServer" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -293,7 +348,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Flask server.Flask (app.py)">
+  <component name="RunManager" selected="Python tests.pytest in test_Server.py">
     <configuration name="Flask (app.py)" type="Python.FlaskServer" factoryName="Flask server" temporary="true" nameIsGenerated="true">
       <module name="myServer" />
       <option name="target" value="$PROJECT_DIR$/app.py" />
@@ -396,9 +451,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest in test_Server.py" />
         <item itemvalue="Flask server.Flask (app.py)" />
         <item itemvalue="Tox.Tox" />
-        <item itemvalue="Python tests.pytest in test_Server.py" />
         <item itemvalue="Python tests.pytest for Testing.test_Server.test_post" />
         <item itemvalue="Python tests.pytest for Testing.test_Server.test_ping" />
       </list>
@@ -447,27 +502,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Tox - 2019.08.11 at 10h 18m 41s.xml">
-      <configuration name="Tox" configurationId="Tox" />
-    </history-entry>
-    <history-entry file="Tox - 2019.08.11 at 10h 19m 35s.xml">
-      <configuration name="Tox" configurationId="Tox" />
-    </history-entry>
-    <history-entry file="Tox - 2019.08.11 at 10h 20m 49s.xml">
-      <configuration name="Tox" configurationId="Tox" />
-    </history-entry>
-    <history-entry file="Tox - 2019.08.11 at 10h 22m 41s.xml">
-      <configuration name="Tox" configurationId="Tox" />
-    </history-entry>
-    <history-entry file="Tox - 2019.08.11 at 10h 25m 25s.xml">
-      <configuration name="Tox" configurationId="Tox" />
-    </history-entry>
-    <history-entry file="Tox - 2019.08.11 at 10h 38m 51s.xml">
-      <configuration name="Tox" configurationId="Tox" />
-    </history-entry>
-    <history-entry file="Tox - 2019.08.11 at 10h 39m 17s.xml">
-      <configuration name="Tox" configurationId="Tox" />
-    </history-entry>
     <history-entry file="Tox - 2019.08.11 at 10h 39m 40s.xml">
       <configuration name="Tox" configurationId="Tox" />
     </history-entry>
@@ -476,6 +510,27 @@
     </history-entry>
     <history-entry file="Tox - 2019.08.11 at 10h 45m 14s.xml">
       <configuration name="Tox" configurationId="Tox" />
+    </history-entry>
+    <history-entry file="pytest_in_test_Server_py - 2019.08.13 at 13h 54m 28s.xml">
+      <configuration name="pytest in test_Server.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_Server_py - 2019.08.13 at 13h 55m 05s.xml">
+      <configuration name="pytest in test_Server.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_Server_py - 2019.08.13 at 13h 57m 21s.xml">
+      <configuration name="pytest in test_Server.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_Server_py - 2019.08.13 at 13h 58m 02s.xml">
+      <configuration name="pytest in test_Server.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_Server_py - 2019.08.13 at 14h 00m 04s.xml">
+      <configuration name="pytest in test_Server.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_Server_py - 2019.08.13 at 14h 01m 06s.xml">
+      <configuration name="pytest in test_Server.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_Server_py - 2019.08.13 at 14h 01m 30s.xml">
+      <configuration name="pytest in test_Server.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -489,14 +544,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29395974" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30201343" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" visible="true" weight="0.37677053" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.37677053" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -550,13 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forumPost.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/require.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -574,13 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/message.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="70" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -588,33 +628,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Testing/test_Server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="61" column="4" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1565511315341" expanded="true" signature="723:728" ph="..." />
-            <marker date="1565511315341" expanded="true" signature="808:813" ph="..." />
-            <marker date="1565511315341" expanded="true" signature="1234:1691" ph="..." />
-            <marker date="1565511315341" expanded="true" signature="1544:1691" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myclient/cypress/integration/examples/actions.spec.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/myclient/cypress/integration/examples/actions.spec.js" />
     <entry file="file://$PROJECT_DIR$/myclient/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -650,13 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tox.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myclient/src/views/Home.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
@@ -664,27 +671,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myclient/cypress/integration/examples/AddUser.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myclient/cypress/integration/Ping.spec.js">
+    <entry file="file://$PROJECT_DIR$/myclient/cypress/integration/examples/AddUser.js" />
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myclient/src/views/Debug.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="25" column="97" selection-start-line="25" selection-start-column="97" selection-end-line="25" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myclient/cypress/integration/AddUser.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+        <state relative-caret-position="204">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+          <folding>
+            <element signature="e#21#132#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -695,13 +689,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
+    <entry file="file://$PROJECT_DIR$/myclient/src/views/Debug.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="97" selection-start-line="25" selection-start-column="97" selection-end-line="25" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="52" column="19" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1565511315341" expanded="true" signature="723:728" ph="..." />
+            <marker date="1565511315341" expanded="true" signature="808:813" ph="..." />
+            <marker date="1565511315341" expanded="true" signature="1234:1691" ph="..." />
+            <marker date="1565511315341" expanded="true" signature="1544:1691" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/message.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forumPost.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myclient/cypress/integration/Ping.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myclient/cypress/integration/AddUser.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Testing/test_Server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="78" column="12" selection-start-line="78" selection-start-column="12" selection-end-line="78" selection-end-column="12" />
           <folding>
-            <element signature="e#21#132#0" />
+            <element signature="e#0#13#0" expanded="true" />
+            <marker date="1565697682726" expanded="true" signature="2030:2035" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tox.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="8" />
         </state>
       </provider>
     </entry>

@@ -398,7 +398,7 @@ function filter_table(elem) {
 }
 </script>
     <h1>testreport.html</h1>
-    <p>Report generated on 11-Aug-2019 at 10:45:14 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v1.22.0</p>
+    <p>Report generated on 20-Aug-2019 at 11:10:47 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v1.22.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -414,8 +414,8 @@ function filter_table(elem) {
         <td>Python</td>
         <td>3.7.0</td></tr></table>
     <h2>Summary</h2>
-    <p>4 tests ran in 5.13 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">4 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>5 tests ran in 6.54 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">4 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -426,10 +426,35 @@ function filter_table(elem) {
           <th>Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">Testing/test_Server.py::test_get_Message</td>
+          <td class="col-duration">0.32</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">client = &lt;FlaskClient &lt;Flask &#x27;app&#x27;&gt;&gt;<br/><br/>    def test_get_Message(client):<br/>        answ1 = client.post(&quot;/users&quot;, data={<br/>            &quot;username&quot;: &quot;Richard&quot;,<br/>            &quot;email&quot;: &quot;rwutscher@gmail.com&quot;,<br/>            &quot;password&quot;: &quot;password&quot;<br/>        })<br/>        assert answ1.status_code == 200<br/>    <br/>        answ2 = client.post(&quot;/posts&quot;, data={&quot;title&quot;: &quot;Forumpost1&quot;, &quot;text&quot;: &quot;Ich bin der erste Forumpost&quot;})<br/>        assert answ2.status_code == 200<br/>    <br/>        answ3 = client.post(&quot;/chat&quot;, data={&quot;text&quot;: &quot;Find ich toll&quot;, &quot;owner&quot;: 1, &quot;forumPost&quot;: 1})<br/>&gt;       assert answ3.status_code == 200<br/><span class="error">E       assert 500 == 200</span><br/><span class="error">E         -500</span><br/><span class="error">E         +200</span><br/><br/>Testing\test_Server.py:80: AssertionError<br/>------------------------------ Captured log call -------------------------------<br/>ERROR    app:app.py:1891 Exception on /chat [POST]
+Traceback (most recent call last):
+  File &quot;D:\TGM\5CHIT\MATURA\Softwareentwicklung\myServer\.tox\py37\lib\site-packages\flask\app.py&quot;, line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File &quot;D:\TGM\5CHIT\MATURA\Softwareentwicklung\myServer\.tox\py37\lib\site-packages\flask\app.py&quot;, line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File &quot;D:\TGM\5CHIT\MATURA\Softwareentwicklung\myServer\.tox\py37\lib\site-packages\flask_restful\__init__.py&quot;, line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File &quot;D:\TGM\5CHIT\MATURA\Softwareentwicklung\myServer\.tox\py37\lib\site-packages\flask\views.py&quot;, line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File &quot;D:\TGM\5CHIT\MATURA\Softwareentwicklung\myServer\.tox\py37\lib\site-packages\flask_restful\__init__.py&quot;, line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File &quot;D:\TGM\5CHIT\MATURA\Softwareentwicklung\myServer\.tox\py37\lib\site-packages\flask_httpauth.py&quot;, line 105, in decorated
+    return f(*args, **kwargs)
+  File &quot;D:\TGM\5CHIT\MATURA\Softwareentwicklung\myServer\message.py&quot;, line 15, in post
+    id = User.query.filter_by(username=auth.username()).first().id
+AttributeError: &#x27;NoneType&#x27; object has no attribute &#x27;id&#x27;<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">Testing/test_Server.py::test_ping</td>
+          <td class="col-name">Testing/test_Server.py::test_ping_User</td>
           <td class="col-duration">0.01</td>
           <td class="col-links"></td></tr>
         <tr>
@@ -438,8 +463,8 @@ function filter_table(elem) {
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">Testing/test_Server.py::test_post</td>
-          <td class="col-duration">0.16</td>
+          <td class="col-name">Testing/test_Server.py::test_post_User</td>
+          <td class="col-duration">0.23</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -447,8 +472,8 @@ function filter_table(elem) {
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">Testing/test_Server.py::test_delete</td>
-          <td class="col-duration">0.42</td>
+          <td class="col-name">Testing/test_Server.py::test_delete_User</td>
+          <td class="col-duration">0.48</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -456,8 +481,8 @@ function filter_table(elem) {
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">Testing/test_Server.py::test_update</td>
-          <td class="col-duration">0.31</td>
+          <td class="col-name">Testing/test_Server.py::test_update_User</td>
+          <td class="col-duration">0.34</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
