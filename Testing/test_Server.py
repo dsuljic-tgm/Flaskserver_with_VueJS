@@ -64,21 +64,3 @@ def test_update_User(client):
     answ = client.get("/users")
     assert answ.json == [{"id": 1, "username": "Dzenan", "email": "dsuljic@gmail.com", "password": "password"}]
 
-
-def test_get_Message(client):
-    answ1 = client.post("/users", data={
-        "username": "Richard",
-        "email": "rwutscher@gmail.com",
-        "password": "password"
-    })
-    assert answ1.status_code == 200
-
-    answ2 = client.post("/posts", data={"title": "Forumpost1", "text": "Ich bin der erste Forumpost"})
-    assert answ2.status_code == 200
-
-    answ3 = client.post("/chat", data={"text": "Find ich toll", "owner": 1, "forumPost": 1})
-    assert answ3.status_code == 200
-
-    answ4 = client.get("/chat")
-
-    #assert answ4.json == [{"messageID": 1, "text": "Find ich toll", "owner": 1, "forumPost": 1}]
